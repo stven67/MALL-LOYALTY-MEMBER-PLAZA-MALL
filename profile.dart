@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Profile Page',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
@@ -32,6 +32,15 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -40,10 +49,10 @@ class ProfileScreen extends StatelessWidget {
             CircleAvatar(
               radius:70,
               backgroundColor: Colors.red.withOpacity(0),
-              backgroundImage: AssetImage('assets/images/tahi.png.png'),
+              backgroundImage: AssetImage('images/pfp1.png'),
             ),
             const SizedBox(height: 20),
-            itemProfile('Name', 'Filbert Wu', CupertinoIcons.person),
+            itemProfile('Name', 'Steven Wu Laurent', CupertinoIcons.person),
             const SizedBox(height: 10),
             itemProfile('Phone', '08182556922', CupertinoIcons.phone),
             const SizedBox(height: 10),
@@ -54,11 +63,11 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
-                  ),
-                  child: const Text('Log Out')
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(15),
+                ),
+                child: const Text('Log Out')
               ),
             )
           ],
@@ -70,16 +79,16 @@ class ProfileScreen extends StatelessWidget {
   itemProfile(String title, String subtitle, IconData iconData) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(0, 5),
-                color: Colors.brown.withOpacity(.2),
-                spreadRadius: 2,
-                blurRadius: 10
-            )
-          ]
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 5),
+            color: Colors.brown.withOpacity(.2),
+            spreadRadius: 2,
+            blurRadius: 10
+          )
+        ]
       ),
       child: ListTile(
         title: Text(title),
