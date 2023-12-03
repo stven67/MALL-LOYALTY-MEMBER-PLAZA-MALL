@@ -13,7 +13,7 @@ class QRCodePage extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Icon(
               Icons.camera_alt,
-              color: Colors.black,
+              color: Colors.brown,
             ),
           ),
         ],
