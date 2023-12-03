@@ -9,11 +9,16 @@ class QRCodePage extends StatelessWidget {
         elevation: 0,
         iconTheme: IconThemeData(color: Color.fromRGBO(132, 110, 69, 1.0)),
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Icon(
-              Icons.camera_alt,
-              color: Colors.brown,
+          Expanded(
+            child: Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Icon(
+                  Icons.camera_alt,
+                  color: Colors.black, // Mengubah warna menjadi hitam
+                ),
+              ),
             ),
           ),
         ],
