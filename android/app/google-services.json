@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "251938293934",
+    "project_id": "mallprotection",
+    "storage_bucket": "mallprotection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251938293934:android:75f8241116b3ae4dc7853f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgw03aLAG3h8SOQxDZipj780rA85oor10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
