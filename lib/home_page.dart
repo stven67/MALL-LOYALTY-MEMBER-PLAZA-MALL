@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/qr_code.dart';
 import 'package:flutter_application/search.dart';
 import 'package:flutter_application/promo.dart';
+import 'package:flutter_application/whatson.dart';
+import 'package:flutter_application/profile.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
@@ -68,26 +70,38 @@ class _HomePageState extends State<HomePage> {
         },
         child:
             Icon(Icons.qr_code, color: Colors.brown), // Set icon color to white
-        backgroundColor: Color.fromARGB(255, 255, 225, 159),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
+            backgroundColor: Color.fromARGB(255, 255, 225, 159),
+            shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
               30.0), // Set border radius to create a circle
         ),
       ),
     );
   }
 
-  void _onNavItemTapped(int index) {
-    setState(() {
-      _currentPage = index;
+void _onNavItemTapped(int index) {
+  setState(() {
+     _currentPage = index;
       if (index == 1) {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => SearchPage()),
         );
+      } if (index == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => WhatsonPage()),
+        );
       }
-    });
-  }
+       else if (index == 3) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ProfileScreen()),
+        );
+      }
+    }
+  );
+}
 
   Widget buildHeader() {
     return Stack(
@@ -567,11 +581,10 @@ class VoucherCard extends StatelessWidget {
         height: 200,
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
-          // Use the AssetImage directly in BoxDecoration as a background image
           image: DecorationImage(
             image: AssetImage('images/PromoOffer1.png'),
             fit: BoxFit
-                .fill, // Menggunakan BoxFit.fill agar gambar mencakup keseluruhan container
+                .fill,
           ),
         ),
       ),
